@@ -354,7 +354,7 @@ namespace SHOP.Controllers
          DateTime today1 = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
          string today2 = today1.ToString("dd/MM/yyyy/HH:mm");
 
-        ViewBag.print = Item_list_.ToList();           
+            ViewBag.print = Item_list_.ToList();           
             ViewBag.time = today;
             string printer = HttpContext.Request.Cookies["printer_name"];
             ViewBag.printer = printer;

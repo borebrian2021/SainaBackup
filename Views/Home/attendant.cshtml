@@ -1069,7 +1069,7 @@
 
             </div>
         </div>
-
+       
 
         @section increment{
 
@@ -1137,7 +1137,8 @@
            
       if (jspmWSStatus()) {
 
-          //Lets consume the viewbag
+          //Generate receipt id
+            var r =Math.floor((Math.random()*99999) + 10000);
           
 
             //Create a ClientPrintJob
@@ -1149,6 +1150,10 @@
                 //cpj.clientPrinter = new JSPM.InstalledPrinter($('#installedPrinterName').val());
                 cpj.clientPrinter = new JSPM.InstalledPrinter('@ViewBag.printer');
             }
+
+
+             var sourcearray = @Html.Raw(Json.Serialize(@ViewBag.print));
+             var total=0;
             //Set content to print...
             //Create ESP/POS commands for sample label
             var esc = '\x1B'; //ESC byte in hex notation
@@ -1168,6 +1173,9 @@
             cmds += '               '+'PIN NO:A00628421M'; //text to print
             cmds += newLine ; 
             
+            cmds += '               '+'RECEIPT NO: '+r; //text to print
+            cmds += newLine ; 
+            
             cmds += esc + '!' + '\x00'; //Character font A selected (ESC ! 0)
             cmds += '------------------------------------------------'; 
 
@@ -1179,8 +1187,7 @@
 
             cmds += newLine ; 
 
-             var sourcearray = @Html.Raw(Json.Serialize(@ViewBag.print));
-             var total=0;
+            
             if (sourcearray != '') {
 
                 var tableHtml;
