@@ -445,21 +445,6 @@ namespace SHOP.Controllers
             Random r = new Random();
             ViewBag.Random = r.Next(1000000, 9999999);
 
-
-
-
-
-
-
-            Receipt_counter rc = new Receipt_counter();
-            rc.Date = today2;
-            _context.Add(rc);
-            _context.SaveChanges();
-
-            ViewBag.receipt_no = rc.Id;
-
-
-
             return View();
         }
         public IActionResult log_out()
@@ -467,6 +452,7 @@ namespace SHOP.Controllers
             HttpContext.Session.Clear();
             return Redirect("~/system_two/Category");
         }
+
         //[AllowAnonymous]
         public IActionResult Expiries()
         {
@@ -777,7 +763,7 @@ namespace SHOP.Controllers
         }
 
         [HttpPost]
-        public IActionResult sell_Item( string id_finish)
+        public JsonResult sell_Item( string id_finish) 
         {
             DateTime date_ = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
             //Lets sell the items from the barcode
@@ -853,7 +839,13 @@ namespace SHOP.Controllers
 
             }
             Item_list_.Clear();
-            return Ok();
+            Receipt_counter rc = new Receipt_counter();
+            rc.Date = today;
+            _context.Add(rc);
+            _context.SaveChanges();
+            ViewBag.receipt_no = rc.Id;
+            return Json(rc.Id);
+
 
         }
         [HttpPost]

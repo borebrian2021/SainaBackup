@@ -1089,7 +1089,9 @@
 
         //_____________________________________________________________________________________________________________________________________________________________________________
         //print
+     //GLOBAL
 
+     var receipt_id=0;
 
 
 
@@ -1173,7 +1175,7 @@
             cmds += '              '+'PIN NO:A00628421M'; //text to print
             cmds += newLine ; 
             
-            cmds += '        '+'RECEIPT NO:'+'@ViewBag.receipt_no' +date; //text to print
+            cmds += '        '+'RECEIPT NO:'+receipt_id+' '+ date; //text to print
             cmds += newLine ; 
             
             cmds += esc + '!' + '\x00'; //Character font A selected (ESC ! 0)
@@ -2030,9 +2032,10 @@ else{
                        
                     
                       
-
+                        receipt_id=response;
+                        console.log(receipt_id);
                             //print(item_name, price, qntity, calculated);
-                            print();
+                        print();
                        
                         $('#done').modal('show');
                         $("#loading").hide("slow");
