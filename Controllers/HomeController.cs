@@ -444,6 +444,22 @@ namespace SHOP.Controllers
            
             Random r = new Random();
             ViewBag.Random = r.Next(1000000, 9999999);
+
+
+
+
+
+
+
+            Receipt_counter rc = new Receipt_counter();
+            rc.Date = today2;
+            _context.Add(rc);
+            _context.SaveChanges();
+
+            ViewBag.receipt_no = rc.Id;
+
+
+
             return View();
         }
         public IActionResult log_out()

@@ -1162,18 +1162,18 @@
             var cmds = esc + "@@"; //Initializes the printer (ESC )
          
             
-            cmds += '              '+'SUPREME SAI ENT.'; //text to print
+            cmds += '               '+'SUPREME SAI ENT.'; //text to print
             cmds += newLine ; 
-            cmds += '             '+'P.O. BOX 65-30706.'; //text to print
+            cmds += '              '+'P.O. BOX 65-30706.'; //text to print
             cmds += newLine ; 
-            cmds += '                  '+'CHEBIEMIT'; //text to print
+            cmds += '                 '+'CHEBIEMIT'; //text to print
             cmds += newLine ; 
-            cmds += '               '+'PHONE:0724411559'; //text to print
+            cmds += '              '+'PHONE:0724411559'; //text to print
             cmds += newLine ; 
-            cmds += '               '+'PIN NO:A00628421M'; //text to print
+            cmds += '              '+'PIN NO:A00628421M'; //text to print
             cmds += newLine ; 
             
-            cmds += '               '+'RECEIPT NO: '+r; //text to print
+            cmds += '        '+'RECEIPT NO:'+'@ViewBag.receipt_no' +date; //text to print
             cmds += newLine ; 
             
             cmds += esc + '!' + '\x00'; //Character font A selected (ESC ! 0)
@@ -1236,6 +1236,8 @@
             cmds += '------------------------------------------------'; 
           cmds += newLine;
           cmds += 'Served By: ' + '@ViewBag.name';
+          cmds += newLine;
+          cmds += 'V.A.T: ' + ' 16% Inclusive';
           cmds += newLine;
           cmds += 'Printed on: ' + '@ViewBag.date';
             cmds += newLine;
