@@ -85,12 +85,12 @@ h6 {
 }
 
 #header .logo {
-  font-size: 28px;
+  font-size: 10px;
   margin: 0;
   padding: 0;
   line-height: 1;
   font-weight: 700;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 #header .logo a {
