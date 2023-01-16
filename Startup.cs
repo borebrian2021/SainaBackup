@@ -119,7 +119,7 @@ namespace SHOP
                 await next();
             });
             app.UseHttpsRedirection();
-            app.UseStatusCodePagesWithReExecute("/system_two/Category", "?statusCode={0}");
+            //app.UseStatusCodePagesWithReExecute("/system_two/Category", "?statusCode={0}");
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseRouting();
@@ -128,7 +128,7 @@ namespace SHOP
             {
                 endpoints.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=system_two}/{action=Category}/{id?}");
+                pattern: "{controller=Website}/{action=index}/{id?}");
             });
       
         }
