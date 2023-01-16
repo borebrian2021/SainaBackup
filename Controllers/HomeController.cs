@@ -26,8 +26,8 @@ namespace SHOP.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         //private readonly string today = DateTime.Now.ToString("dd/MM/yyyy");
         private static TimeZoneInfo E_Africa_standard_time = TimeZoneInfo.FindSystemTimeZoneById("E. Africa Standard Time");
-        private static  DateTime today1 = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
-      
+        private static DateTime today1 = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
+
 
 
         string today = today1.ToString("dd/MM/yyyy");
@@ -54,13 +54,13 @@ namespace SHOP.Controllers
 
         [Authorize(Roles = "2")]
         public IActionResult remove(string id)
-        { 
-            
-            int g =Item_list_.Count();
+        {
 
-            foreach(var  x in Item_list_)
+            int g = Item_list_.Count();
+
+            foreach (var x in Item_list_)
             {
-                if(x.barcode_Number != id)
+                if (x.barcode_Number != id)
                 {
                     Item_list_temp.Add(x);
                 }
@@ -68,25 +68,25 @@ namespace SHOP.Controllers
 
             }
             Item_list_.Clear();
-            foreach(var x in Item_list_temp)
+            foreach (var x in Item_list_temp)
             {
                 Item_list_.Add(x);
             }
             Item_list_temp.Clear();
             TempData["rmvd"] = "Item removed successfully!";
-                    return Redirect("~/home/attendant");
+            return Redirect("~/home/attendant");
 
         }
-        public IActionResult changeQuantity(string b_number,int quantity)
+        public IActionResult changeQuantity(string b_number, int quantity)
         {
-            var fromList = Item_list_.FirstOrDefault(x =>x.barcode_Number == b_number);
+            var fromList = Item_list_.FirstOrDefault(x => x.barcode_Number == b_number);
             fromList.Quantity = quantity;
             List<shop_items> x = new List<shop_items>();
-            foreach(var xItem in Item_list_)
+            foreach (var xItem in Item_list_)
             {
                 if (xItem.barcode_Number != b_number)
                 {
-                    x.Add(xItem);   
+                    x.Add(xItem);
                 }
             }
             Item_list_.Clear();
@@ -100,8 +100,8 @@ namespace SHOP.Controllers
         public IActionResult confirmBarcode(String b_number, [Optional] int quantity)
 
         {
-            var c =Item_list_.FirstOrDefault(x=>x.barcode_Number == b_number);
-            if (c != null){
+            var c = Item_list_.FirstOrDefault(x => x.barcode_Number == b_number);
+            if (c != null) {
                 Item_list_.Remove(c);
             }
             var x = _context.Shop_items.FirstOrDefault(x => x.barcode_Number == b_number);
@@ -112,14 +112,14 @@ namespace SHOP.Controllers
                 {
                     shop_items s = new shop_items();
                     s.Item_price = x.Item_price;
-                    s.Item_name=x.Item_name;
+                    s.Item_name = x.Item_name;
                     s.Item_price = x.Item_price;
                     s.Cost_price = x.Cost_price;
                     s.DateTime = x.DateTime;
                     s.Quantity = quantity;
                     s.item_temp = x.item_temp;
                     s.barcode_Number = x.barcode_Number;
-                    s.id = x.id;    
+                    s.id = x.id;
                     confirm_item.Add(s);
                 }
                 else
@@ -141,9 +141,9 @@ namespace SHOP.Controllers
         public IActionResult remove_item(int id)
         {
 
-           var toRemove= confirm_item.FirstOrDefault(x => x.id == id);
+            var toRemove = confirm_item.FirstOrDefault(x => x.id == id);
             confirm_item.Remove(toRemove);
-         
+
 
 
 
@@ -169,7 +169,7 @@ namespace SHOP.Controllers
                 }
                 else
                 {
-                   
+
                 }
                 change_.total = "Success".ToString();
 
@@ -182,7 +182,7 @@ namespace SHOP.Controllers
 
 
 
-            
+
             return Json(change_);
         }
 
@@ -226,135 +226,135 @@ namespace SHOP.Controllers
         }
 
 
-      //      foreach (var item_ in toLoop)
-      //{
-      //       var v = Item_list_.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
-      //       try
-      //          {
+        //      foreach (var item_ in toLoop)
+        //{
+        //       var v = Item_list_.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
+        //       try
+        //          {
 
 
 
 
 
-      //     if (v != null)
-      //              {
-      //                  List<shop_items> tempory = new List<shop_items>();
-      //                  foreach (var kevin in Item_list_)
-      //                  {
-      //                      if (kevin.barcode_Number != item_.barcode_Number)
-      //                      {
-      //                          tempory.Add(kevin);
-      //                          Item_list_.Add(kevin);
-      //                      }
-      //                      else
-      //                      {
-      //                          confirm_item.Clear();
-      //                          return Redirect("~/home/attendant");
-      //                      }
-      //                  }
+        //     if (v != null)
+        //              {
+        //                  List<shop_items> tempory = new List<shop_items>();
+        //                  foreach (var kevin in Item_list_)
+        //                  {
+        //                      if (kevin.barcode_Number != item_.barcode_Number)
+        //                      {
+        //                          tempory.Add(kevin);
+        //                          Item_list_.Add(kevin);
+        //                      }
+        //                      else
+        //                      {
+        //                          confirm_item.Clear();
+        //                          return Redirect("~/home/attendant");
+        //                      }
+        //                  }
 
-      //                  tempory.Add(v);
-      //                  //Item_list_.Clear();
-      //                  //Item_list_ = tempory;
-      //                  confirm_item.Clear();
-      //                  return Redirect("~/home/attendant");
-      //              }
-      //              else
-      //              {
-      //                  confirm_item.Clear();
-      //                  Random k = new Random();
-      //                  int random = k.Next(000000, 999999);
-      //                  var from_db = _context.Shop_items.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
-      //                  if (from_db != null)
-      //                  {
-      //                      var test = from_db.Quantity;
-      //                      if (from_db.Quantity <= 0)
-      //                      {
-      //                          var c = new shop_items()
-      //                          {
-      //                              Item_name = from_db.Item_name,
-      //                              item_temp = random,
-      //                              id = 0,
-      //                              Item_price = 0,
-      //                              Quantity = 0,
-      //                              Cost_price = 0,
-      //                              DateTime = "These items have run out of stock.Please restock.",
-      //                              barcode_Number = item_.barcode_Number,
-      //                          };
-      //                          Item_list_.Add(c);
-      //                          //return Ok(Item_list_);
+        //                  tempory.Add(v);
+        //                  //Item_list_.Clear();
+        //                  //Item_list_ = tempory;
+        //                  confirm_item.Clear();
+        //                  return Redirect("~/home/attendant");
+        //              }
+        //              else
+        //              {
+        //                  confirm_item.Clear();
+        //                  Random k = new Random();
+        //                  int random = k.Next(000000, 999999);
+        //                  var from_db = _context.Shop_items.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
+        //                  if (from_db != null)
+        //                  {
+        //                      var test = from_db.Quantity;
+        //                      if (from_db.Quantity <= 0)
+        //                      {
+        //                          var c = new shop_items()
+        //                          {
+        //                              Item_name = from_db.Item_name,
+        //                              item_temp = random,
+        //                              id = 0,
+        //                              Item_price = 0,
+        //                              Quantity = 0,
+        //                              Cost_price = 0,
+        //                              DateTime = "These items have run out of stock.Please restock.",
+        //                              barcode_Number = item_.barcode_Number,
+        //                          };
+        //                          Item_list_.Add(c);
+        //                          //return Ok(Item_list_);
 
-      //                          return Redirect("~/home/attendant");
+        //                          return Redirect("~/home/attendant");
 
-      //                      }
-      //                      else
-      //                      {
-      //                          var check_if_exist = Item_list_.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
+        //                      }
+        //                      else
+        //                      {
+        //                          var check_if_exist = Item_list_.FirstOrDefault(x => x.barcode_Number == item_.barcode_Number);
 
-      //                          if (check_if_exist == null)
-      //                          {
-      //                              var c = new shop_items()
-      //                              {
-      //                                  Item_name = from_db.Item_name,
-      //                                  item_temp = random,
-      //                                  id = from_db.id,
-      //                                  Item_price = from_db.Item_price,
-      //                                  Quantity = item_.Quantity,
-      //                                  Cost_price = from_db.Cost_price,
-      //                                  DateTime = from_db.DateTime,
-      //                                  barcode_Number = item_.barcode_Number,
-      //                              };
-      //                              Item_list_.Add(c);
-      //                          }
-      //                          else
-      //                          {
-      //                              TempData["rmvd"] = "You have already scanned this item.Please enter quantity";
-      //                          }
-      //                          //return Ok(Item_list_);
+        //                          if (check_if_exist == null)
+        //                          {
+        //                              var c = new shop_items()
+        //                              {
+        //                                  Item_name = from_db.Item_name,
+        //                                  item_temp = random,
+        //                                  id = from_db.id,
+        //                                  Item_price = from_db.Item_price,
+        //                                  Quantity = item_.Quantity,
+        //                                  Cost_price = from_db.Cost_price,
+        //                                  DateTime = from_db.DateTime,
+        //                                  barcode_Number = item_.barcode_Number,
+        //                              };
+        //                              Item_list_.Add(c);
+        //                          }
+        //                          else
+        //                          {
+        //                              TempData["rmvd"] = "You have already scanned this item.Please enter quantity";
+        //                          }
+        //                          //return Ok(Item_list_);
 
-      //                          return Redirect("~/home/attendant");
-      //                      }
-      //                  }
-      //                  else
-      //                  {
-      //                      var c = new shop_items()
-      //                      {
-      //                          Item_name = "Item not availlabe",
-      //                          item_temp = random,
-      //                          id = 0,
-      //                          Item_price = 0,
-      //                          Quantity = 0,
-      //                          Cost_price = 0,
-      //                          DateTime = "Item not availlable in stock.",
-      //                          barcode_Number = item_.barcode_Number,
-      //                      };
+        //                          return Redirect("~/home/attendant");
+        //                      }
+        //                  }
+        //                  else
+        //                  {
+        //                      var c = new shop_items()
+        //                      {
+        //                          Item_name = "Item not availlabe",
+        //                          item_temp = random,
+        //                          id = 0,
+        //                          Item_price = 0,
+        //                          Quantity = 0,
+        //                          Cost_price = 0,
+        //                          DateTime = "Item not availlable in stock.",
+        //                          barcode_Number = item_.barcode_Number,
+        //                      };
 
-      //                      Item_list_.Add(c);
-      //                      return Redirect("~/home/attendant");
-      //                      //return Ok(Item_list_);
+        //                      Item_list_.Add(c);
+        //                      return Redirect("~/home/attendant");
+        //                      //return Ok(Item_list_);
 
-      //                  }
+        //                  }
 
-      //              }
-      //          }
-      //          catch (Exception ex)
-      //          {
-                   
+        //              }
+        //          }
+        //          catch (Exception ex)
+        //          {
 
-      //          }
 
-      //      }
-      //      //Item_list_.Clear()
-      //      TempData["msg"] = "You have entered a wrong serial number please check and try again.";
-      //      return Redirect("~/home/attendant");
-      //  }
-        public IActionResult attendant([Optional] int b,[Optional] string print)
+        //          }
+
+        //      }
+        //      //Item_list_.Clear()
+        //      TempData["msg"] = "You have entered a wrong serial number please check and try again.";
+        //      return Redirect("~/home/attendant");
+        //  }
+        public IActionResult attendant([Optional] int b, [Optional] string print)
         {
-         TimeZoneInfo E_Africa_standard_time = TimeZoneInfo.FindSystemTimeZoneById("E. Africa Standard Time");
-         DateTime today1 = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
-         string today2 = today1.ToString("dd/MM/yyyy/HH:mm");
+            TimeZoneInfo E_Africa_standard_time = TimeZoneInfo.FindSystemTimeZoneById("E. Africa Standard Time");
+            DateTime today1 = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, E_Africa_standard_time);
+            string today2 = today1.ToString("dd/MM/yyyy/HH:mm");
 
-            ViewBag.print = Item_list_.ToList();           
+            ViewBag.print = Item_list_.ToList();
             ViewBag.time = today;
             string printer = HttpContext.Request.Cookies["printer_name"];
             ViewBag.printer = printer;
@@ -398,7 +398,7 @@ namespace SHOP.Controllers
             ViewBag.allBrands_0 = _context.Shop_items.ToList();
             ViewBag.count_below = _context.Shop_items.Count(x => x.Quantity <= 0);
             ViewBag.to_restock = _context.Shop_items.Where(x => x.Quantity <= 0);
-           
+
 
             var lool = _context.Shop_items;
             float count_ = 0;
@@ -429,11 +429,11 @@ namespace SHOP.Controllers
             //Item_list_.Clear();
             ViewBag.selected_items = Item_list_.ToList();
             float total = 0;
-            foreach(var x in Item_list_)
+            foreach (var x in Item_list_)
             {
                 total = total + (x.Quantity * x.Item_price);
             }
-            ViewBag.Total_selected=total;
+            ViewBag.Total_selected = total;
             ViewBag.confirm_item = confirm_item.ToList();
             ViewBag.selected_items_count = Item_list_.ToList().Count();
             ViewBag.confirm_item_count = confirm_item.ToList().Count();
@@ -441,7 +441,7 @@ namespace SHOP.Controllers
 
             var phone = HttpContext.Session.GetString("phone");
             var pass = _context.Log_in.SingleOrDefault(z => z.Phone == phone);
-           
+
             Random r = new Random();
             ViewBag.Random = r.Next(1000000, 9999999);
 
@@ -598,14 +598,14 @@ namespace SHOP.Controllers
         }
         [HttpPost]
 
-        public IActionResult add_supliers(string Company_name,string Phone,string location)
+        public IActionResult add_supliers(string Company_name, string Phone, string location)
         {
-            Suppliers x = new Suppliers() { 
-            
-            Company_name=Company_name,
-            Phone=Phone,
-            Location=location
-            
+            Suppliers x = new Suppliers() {
+
+                Company_name = Company_name,
+                Phone = Phone,
+                Location = location
+
             };
 
             _context.Add(x);
@@ -614,7 +614,7 @@ namespace SHOP.Controllers
             TempData["message"] = "Supplier successfully added!";
             return Redirect("~/home/supliers");
 
-        } 
+        }
         public IActionResult supliers()
         {
             ViewBag.suppliers = _context.Supliers.ToList();
@@ -639,10 +639,10 @@ namespace SHOP.Controllers
                 TempData["message"] = "Not found";
                 return Redirect("~/home/supliers");
             }
-          
+
         }
         [HttpPost]
-        public IActionResult mod_account(string f_names, string phone,string new_pass, string shop_name, int id)
+        public IActionResult mod_account(string f_names, string phone, string new_pass, string shop_name, int id)
         {
             var records = _context.Log_in.FirstOrDefault(x => x.id == id);
             records.Full_name = f_names;
@@ -685,7 +685,7 @@ namespace SHOP.Controllers
         public IActionResult dele_sold(int id)
         {
             var itemToRemove = _context.sold_items.SingleOrDefault(x => x.id == id); //returns a single item.
-          
+
             if (itemToRemove != null)
             {
                 _context.sold_items.Remove(itemToRemove);
@@ -761,7 +761,7 @@ namespace SHOP.Controllers
 
             return RedirectToAction("creditors", "Home", new { id = id });
         }
-
+    
         [HttpPost]
         public JsonResult sell_Item( string id_finish) 
         {
