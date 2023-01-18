@@ -365,7 +365,6 @@ h6 {
 
 #hero .carousel-item {
   object-fit:cover;
-  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -2127,4 +2126,10 @@ section {
 
 #footer .credits a:hover {
   color: white;
+}
+.auto{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    border-radius:10px;
 }
