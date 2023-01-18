@@ -7,6 +7,10 @@ namespace SHOP_DECOMPILED.Controllers
         public IActionResult Index()
         {
             return View();
+        }  
+        public IActionResult Services()
+        {
+            return View();
         }
     }
 }
