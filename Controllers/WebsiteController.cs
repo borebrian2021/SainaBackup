@@ -42,10 +42,10 @@ namespace SHOP_DECOMPILED.Controllers
                     
                     message.IsBodyHtml = true; //to make message body as html  
                 message.Body = "<html><body>" +
-                    "<img src=\"https://res.cloudinary.com/dqab6gg7d/image/upload/v1671698046/Hashtag/Logo_Three_lmbsem.png\" style=\"height:70px;width:7-px\" <br/>" +
+                    "<img src=\"https://res.cloudinary.com/dqab6gg7d/image/upload/v1674139232/Supremesai/saina_logo_uvc4cj.png\" style=\"height:70px;width:7-px\" <br/>" +
                     "<table>" +
                     "<tr>" +
-                    "<td><b style=\"color:#a7b3c8\">Hashtag <span style=\"color:#1c98f7\">Technologies</span></td> <td></td>" +
+                    "<td><b style=\"color:#a7b3c8\">Supreme <span style=\"color:#1c98f7\">Sai Technologies</span></td> <td></td>" +
                     "</tr>" + "<tr>" +
                     "<td>New mail from: </td> <td>" + name + "</td>" +
                     "</tr>" +
@@ -70,7 +70,7 @@ namespace SHOP_DECOMPILED.Controllers
                     smtp.Host = "smtp.gmail.com"; //for gmail host  
                     smtp.EnableSsl = true;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential("bkimutai2021@gmail.com", "Bore2687??");
+                    smtp.Credentials = new NetworkCredential("bkimutai2021@gmail.com", "cwufeiruewdwcvhh");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     @TempData["message"] = "Thank you for contacting Supreme Sai Enterprise.\n Your message has been sent successfully, Please wait for reply from customer service.";
                     smtp.Send(message);
