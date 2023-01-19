@@ -1770,3 +1770,7 @@ D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPI
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\bin\Release\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Shared\_Layout_website.cshtml.g.cs
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\index.cshtml.g.cs
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\products.cshtml.g.cs
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\testimonials.cshtml.g.cs
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\Contacts.cshtml.g.cs
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\Quotation.cshtml.g.cs

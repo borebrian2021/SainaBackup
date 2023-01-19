@@ -582,7 +582,7 @@ tr.space_tr {
 }
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
   
     background-color: #F1FFFF;
     /*background-color: snow;*/

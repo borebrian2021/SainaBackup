@@ -8,7 +8,19 @@ namespace SHOP_DECOMPILED.Controllers
         {
             return View();
         }  
-        public IActionResult Services()
+        public IActionResult Products()
+        {
+            return View();
+        }  
+        public IActionResult Testimonials()
+        {
+            return View();
+        }
+        public IActionResult Contacts()
+        {
+            return View();
+        }
+        public IActionResult Quotation()
         {
             return View();
         }

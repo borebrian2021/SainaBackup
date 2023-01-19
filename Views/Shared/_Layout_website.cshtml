@@ -42,14 +42,12 @@
 
          
           @*<li><a href="services.html">About</a></li>*@
-              <li><a href="testimonials.html">Testimonials</a></li>
+              <li><a href="/website/testimonials">Testimonials</a></li>
 
-          <li><a href="/website/services">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/website/products">Products</a></li>
+          <li><a href="/website/contacts">Contact</a></li>
           <li><a href="contact.html">Login</a></li>
-          <li><a href="index.html" class="getstarted">Get Started</a></li>
+          <li><a href="/website/quotation" class="getstarted">Request Quotion</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -64,7 +62,7 @@
 
 
  
-    <div class="container-fluid bring_to_front " style="margin-top:180px">
+    <div class="container-fluid bring_to_front " style=" padding:0!important">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -121,14 +119,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Supreme Sai Enterprise</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/sailor-free-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="https://bootstrapmade.com/">Fuela Holdings</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -145,6 +143,20 @@
    <!-- Template Main JS File -->
   <script src="~/js/main.js"></script>
 
+  <script>
+  
+var i = 0;
+var txt = 'Supreme sai Enterprise';
+var speed = 200;
 
+function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("write").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+typeWriter()
+  </script>
 </body>
 </html>

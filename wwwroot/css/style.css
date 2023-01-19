@@ -771,7 +771,7 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: rgba(85, 98, 112, 0.6);
+  /*background: rgba(85, 98, 112, 0.6);*/
 }
 
 .portfolio .portfolio-wrap::before {
@@ -2127,9 +2127,32 @@ section {
 #footer .credits a:hover {
   color: white;
 }
-.auto{
-    height:100%;
-    width:100%;
-    object-fit:cover;
-    border-radius:10px;
+.auto {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.img-fluid {
+    border-radius: 5px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.illustrations{
+    height:240px;
+    align-content:center;
+    align-items:center;
+    text-align:center;
+}
+.form-control {
+    /*border: solid 1px #d9232d !important;*/
+    border-radius: 5px !important;
+    border:none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+.form-control :hover :active :focus{
+    border:none!important;
+}
+.flex{
+    display:flex !important;
 }
