@@ -2145,17 +2145,19 @@ section {
     text-align:center;
 }
 .form-control {
-    /*border: solid 1px #d9232d !important;*/
+    border: solid 1px #d9232d !important;
     border-radius: 5px !important;
     border:none;
     padding:10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;*/
 }
 .form-control :hover :active :focus{
     border:none!important;
 }
 .flex{
     display:flex !important;
+    align-content:center!important;
+    justify-content:center !important;
 }
 .send {
     background: #d9232d;

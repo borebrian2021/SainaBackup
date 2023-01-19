@@ -35,10 +35,9 @@ namespace SHOP_DECOMPILED.Controllers
                     MailMessage message = new MailMessage();
                     SmtpClient smtp = new SmtpClient();
                     message.From = new MailAddress("bkimutai2021@gmail.com");
-                    message.To.Add(new MailAddress("bkimutai2021@gmail.com"));
                     message.CC.Add(new MailAddress(email));
 
-                message.Subject = "Quotation Request Mail";
+                message.Subject = "You have new mail from a client";
                     
                     message.IsBodyHtml = true; //to make message body as html  
                 message.Body = "<html><body>" +
