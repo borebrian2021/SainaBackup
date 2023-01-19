@@ -35,22 +35,23 @@
             <form asp-action="send_quotation"  role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                     <label>Enter Full Names:</label>
-                  <input type="text" name="phone" class="form-control" id="name" placeholder="Your Name" required>
+                     <label>Enter Full Name:</label>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                      <label>Enter email:</label>
-                  <input type="email" class="form-control mt-3" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
                   <label>Enter Phone number:</label>
 
-                <input type="text" class="form-control mt-3" name="Phone number" id="subject" placeholder="Subject" value="+254" required>
+                <input type="text" class="form-control mt-3" name="phone" id="subject" placeholder="Subject" value="+254" required>
               </div> 
               <div class="form-group mt-3">
-                  <label>Select the service:</label>
-                  <select class="form-control mt-3">
+                  <label>Select product:</label>
+                  <select class="form-control mt-3" required name="service" >
+                      <option value="Gate"> --Select service--</option>
                       <option value="Gate"> Gate Design</option>
                       <option value="Window"> Window Design</option>
                       <option value="Door"> Door Design</option>
@@ -62,12 +63,13 @@
                   </select>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                  <label>Message (Optional):</label>
+
+                <textarea class="form-control" name="message" rows="5" placeholder="Message(Optional)" ></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                
+                <div class="sent-message">@{@TempData["message"]}</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
