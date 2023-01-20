@@ -1,13 +1,4 @@
-/**
-* Template Name: Sailor - v4.10.0
-* Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -2145,17 +2136,19 @@ section {
     text-align:center;
 }
 .form-control {
-    /*border: solid 1px #d9232d !important;*/
+    border: solid 1px #d9232d !important;
     border-radius: 5px !important;
     border:none;
     padding:10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+    /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;*/
 }
 .form-control :hover :active :focus{
     border:none!important;
 }
 .flex{
     display:flex !important;
+    align-content:center!important;
+    justify-content:center !important;
 }
 .send {
     background: #d9232d;
@@ -2333,3 +2326,20 @@ section {
 
 
 
+.auto{
+    height:70px;
+    width:70px;
+}
+.auto1{
+    height:100%;
+    width:100%;
+    border-radius:5px;
+    object-fit:cover;
+
+}
+.color {
+    color: #d9232d;
+}
+.font_small_{
+    font-size:13px;
+}

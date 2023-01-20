@@ -1774,3 +1774,4 @@ D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPI
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\testimonials.cshtml.g.cs
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\Contacts.cshtml.g.cs
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\Quotation.cshtml.g.cs
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\Razor\Views\Website\Contacts - Copy.cshtml.g.cs
