@@ -2129,8 +2129,22 @@ section {
     border-radius: 5px !important;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.illustrations{
-    height:240px;
+.flex_border {
+    border-left: 10px solid #d9232d !important;
+    padding-top:30px;
+    padding-left:60px;
+    border-top-left-radius:30px !important;
+    border-bottom-left-radius:30px !important;
+}
+.illustrations {
+    height: 240px;
+    width: 240px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}.illustrations_{
+    height:100px;
+    width:100px;
     align-content:center;
     align-items:center;
     text-align:center;
@@ -2145,17 +2159,25 @@ section {
 .form-control :hover :active :focus{
     border:none!important;
 }
-.flex{
-    display:flex !important;
-    align-content:center!important;
+.flex {
+    display: flex !important;
+    align-content: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
     justify-content:center !important;
+    align-items:center !important;
+}
+.outer-card {
+    height:300px;
+    width:100%;
+    border-radius:5px;
 }
 .send {
     background: #d9232d;
     padding: 8px 25px;
     margin-left: 30px;
     border-radius: 4px;
-    border:none;
+    border: none;
     font-weight: 400;
     color: #fff;
 }
@@ -2342,4 +2364,22 @@ section {
 }
 .font_small_{
     font-size:13px;
+}
+.category {
+    width: 200px;
+    border-radius: 50px;
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #d9232d;
+    padding: 15px;
+    transition:all 0.2s ease-in;
+}.category:hover {
+    width: 200px;
+    border-radius: 50px;
+    font-size:25px;
+    height:70px;
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: #d9232d;
+    padding: 15px;
 }

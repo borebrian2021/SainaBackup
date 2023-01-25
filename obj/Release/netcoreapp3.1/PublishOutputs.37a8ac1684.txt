@@ -125,6 +125,7 @@ D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPI
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\resume.png
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\saina_logo.png
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\saina_logo2.png
+D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\saina_logo2.psd
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\sai_.png
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\scanner.gif
 D:\From Desktop\ALL DESKTOP FOLDERS\PROJECTS\SHOP_DECOMPILED-master\SHOP_DECOMPILED-master\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\images\select.svg

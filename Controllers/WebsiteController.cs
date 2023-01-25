@@ -27,6 +27,11 @@ namespace SHOP_DECOMPILED.Controllers
         {
             return View();
         } 
+        public IActionResult Category()
+        {
+            return View();
+        } 
+
         public IActionResult send_quotation(string name, string phone, string email ,string message_, string service )
         {
           
@@ -34,42 +39,41 @@ namespace SHOP_DECOMPILED.Controllers
                 {
                     MailMessage message = new MailMessage();
                     SmtpClient smtp = new SmtpClient();
-                    message.From = new MailAddress("bkimutai2021@gmail.com");
-                    message.CC.Add(new MailAddress(email));
+                    message.From = new MailAddress("supremesai2021@gmail.com");
 
-                message.Subject = "You have new mail from a client";
+                message.Subject = "You have new quotation request from from a client.";
                     
                     message.IsBodyHtml = true; //to make message body as html  
                 message.Body = "<html><body>" +
                     "<img src=\"https://res.cloudinary.com/dqab6gg7d/image/upload/v1674139232/Supremesai/saina_logo_uvc4cj.png\" style=\"height:70px;width:7-px\" <br/>" +
-                    "<table>" +
+                    "<table style=\"margin:15px;\">" +
                     "<tr>" +
-                    "<td><b style=\"color:#a7b3c8\">Supreme <span style=\"color:#1c98f7\">Sai Technologies</span></td> <td></td>" +
+                    "<td style=\"margin:10px;\"><b style=\"color:#a7b3c8\">Supreme <span style=\"color:#1c98f7\">Sai Enterprise</span></td> <td></td>" +
                     "</tr>" + "<tr>" +
-                    "<td>New mail from: </td> <td>" + name + "</td>" +
+                    "<td style=\"margin:10px;\">New mail from: </td> <td>" + name + "</td>" +
                     "</tr>" +
                     "<tr>" +
-                    "<td>Email: </td> <td>" + email + "</td>" +
+                    "<td style=\"margin:10px;\">Email: </td> <td>" + email + "</td>" +
                     "</tr>" +
                     "</tr>" +
                     "<tr>" +
-                    "<td>Phone number: </td> <td>" + phone + "</td>" +
+                    "<td style=\"margin:10px;\">Phone number: </td> <td>" + phone + "</td>" +
                     "</tr>" +
                      "<tr>" +
-                    "<td>Time: </td> <td>" + DateTime.Now + "</td>" +
+                    "<td style=\"margin:10px;\">Time: </td> <td>" + DateTime.Now + "</td>" +
                     "</tr>" +  
                     "<tr>" +
-                    "<td>Service Required: </td> <td>" +service+ "</td>" +
+                    "<td style=\"margin:10px;\">Service Required: </td> <td>" + service+ "</td>" +
                     "</tr>" +
                       "<tr>" +
-                    "<td>Message: </td> <td>" + message_ + "</td>" +
+                    "<td style=\"margin:10px;\">Message: </td> <td>" + message_ + "</td>" +
                     "</tr>" +
                     "</table>";
                     smtp.Port = 587;
                     smtp.Host = "smtp.gmail.com"; //for gmail host  
                     smtp.EnableSsl = true;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential("bkimutai2021@gmail.com", "cwufeiruewdwcvhh");
+                    smtp.Credentials = new NetworkCredential("supremesai2021@gmail.com", "avyawuvsbvflwpql");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     @TempData["message"] = "Thank you for contacting Supreme Sai Enterprise.\n Your message has been sent successfully, Please wait for reply from customer service.";
                     smtp.Send(message);
