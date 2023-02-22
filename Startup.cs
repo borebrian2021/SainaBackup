@@ -56,9 +56,14 @@ namespace SHOP
             // Add the processing server as IHostedService
 
             services.AddDbContext<ApplicationDBContext>(
-    options => options.UseMySql(Configuration.GetConnectionString("Default")));
-    //        services.AddDbContext<ApplicationDBContext_online>(
-    //options => options.UseMySql(Configuration.GetConnectionString("online")));
+    options => options.UseMySql(Configuration.GetConnectionString("Default"), providerOptions => providerOptions.EnableRetryOnFailure(
+         maxRetryCount: 3,
+        maxRetryDelay: TimeSpan.FromSeconds(10),
+        errorNumbersToAdd: null
+        )));
+          
+            //        services.AddDbContext<ApplicationDBContext_online>(
+
             services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["Default"]));
             var key = Encoding.ASCII.GetBytes("YourKey-2374-OFFKDI940NG7:56753253-tyuw-5769-0921-kfirox29zoxv");
             services.AddAuthentication(x =>

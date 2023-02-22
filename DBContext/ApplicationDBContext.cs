@@ -30,7 +30,6 @@ namespace Lubes.DBContext
 		public DbSet<Particulars> Particulars { get; set; }
 		public DbSet<Receipts2> Receipts { get; set; }
 		public DbSet<Receipt_counter> Receipt_counter { get; set; }
-	
 		public DbSet<Log_in2> Log_in2{ get; set; }
 
 		/// </summary>
@@ -38,6 +37,7 @@ namespace Lubes.DBContext
 		public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
 			: base(options)
 		{
+			Database.SetCommandTimeout(150000);
 		}
 	}
 }
